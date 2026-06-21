@@ -1,0 +1,665 @@
+[index.html](https://github.com/user-attachments/files/29183233/index.html)
+[palm-beach-jet-services (4).zip](https://github.com/user-attachments/files/29183208/palm-beach-jet-services.4.zip)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Palm Beach Jet Services | Private Aviation, Charter &amp; Aircraft Management</title>
+<meta name="description" content="Palm Beach Jet Services is a boutique private aviation brokerage offering on-demand charter, aircraft management coordination, and ownership advisory across Palm Beach, the Treasure Coast, and South Florida." />
+<link rel="icon" type="image/png" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --green-900:#04221A;
+    --green-800:#0A3326;
+    --green-700:#12462F;
+    --green-600:#1B5A3E;
+    --cream:#F7F4EC;
+    --white:#FFFFFF;
+    --gold:#BD9A4E;
+    --gold-light:#D8BD7F;
+    --ink:#162520;
+    --ink-soft:#4C5A53;
+    --sage:#EAEFE7;
+    --line:rgba(10,51,38,0.12);
+    --radius:2px;
+    --maxw:1240px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.55;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:var(--green-900);
+  }
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{margin:0;padding:0;list-style:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-size:11.5px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 26px;
+    font-size:13px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    font-weight:600;
+    border-radius:var(--radius);
+    cursor:pointer;
+    transition:all .2s ease;
+    border:1px solid transparent;
+  }
+  .btn-gold{
+    background:transparent;
+    color:var(--gold-light);
+    border-color:var(--gold);
+  }
+  .btn-gold:hover{background:var(--gold);color:var(--green-900);}
+  .btn-solid{
+    background:var(--green-900);
+    color:var(--white);
+    border-color:var(--green-900);
+  }
+  .btn-solid:hover{background:var(--green-700);}
+  .btn-outline-dark{
+    background:transparent;
+    color:var(--green-900);
+    border-color:var(--green-900);
+  }
+  .btn-outline-dark:hover{background:var(--green-900);color:var(--white);}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--green-900);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 32px;
+    max-width:1320px;margin:0 auto;
+    gap:18px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand img{height:34px;width:auto;border-radius:3px;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.1;}
+  .brand-text strong{
+    font-family:'Fraunces',serif;
+    color:var(--white);
+    font-size:15.5px;font-weight:500;
+    white-space:nowrap;
+  }
+  .brand-text span{
+    color:var(--gold-light);
+    font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;
+  }
+  .nav-links{display:flex;align-items:center;gap:20px;}
+  .nav-links a{
+    color:rgba(255,255,255,0.82);
+    font-size:12.5px;font-weight:500;
+    letter-spacing:0.02em;
+    transition:color .2s;
+    white-space:nowrap;
+  }
+  .nav-links a:hover{color:var(--gold-light);}
+  .nav-cta{display:flex;align-items:center;gap:18px;margin-left:16px;}
+  .nav-phone{
+    color:rgba(255,255,255,0.82);
+    font-size:13px;font-weight:600;letter-spacing:0.02em;
+    white-space:nowrap;
+    padding-left:18px;
+    border-left:1px solid rgba(255,255,255,0.18);
+  }
+  .nav-phone:hover{color:var(--gold-light);}
+  @media (max-width:1180px){.nav-phone{display:none;}}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px;}
+  .menu-toggle span{display:block;width:22px;height:2px;background:#fff;margin:5px 0;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, var(--green-900) 0%, #06291F 55%, var(--green-800) 100%);
+    overflow:hidden;
+    padding:84px 0 0;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr 1fr;
+    align-items:center;gap:40px;
+    max-width:var(--maxw);margin:0 auto;padding:0 32px 0;
+  }
+  .hero h1{
+    color:var(--white);
+    font-size:46px;
+    line-height:1.12;
+    margin:18px 0 22px;
+  }
+  .hero h1 em{font-style:normal;color:var(--gold-light);}
+  .hero p.lede{
+    color:rgba(255,255,255,0.78);
+    font-size:16.5px;
+    max-width:480px;
+    margin-bottom:34px;
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:64px;}
+  .hero-art{position:relative;height:420px;}
+  .hero-art svg{width:100%;height:100%;}
+
+  /* ---------- TICKER / STRIP under hero ---------- */
+  .strip{
+    background:var(--green-800);
+    border-top:1px solid rgba(255,255,255,0.08);
+  }
+  .strip .wrap{
+    display:flex;justify-content:space-between;flex-wrap:wrap;
+    gap:18px;padding:18px 32px;
+  }
+  .strip-item{
+    color:rgba(255,255,255,0.75);
+    font-size:12.5px;letter-spacing:0.04em;
+    display:flex;align-items:center;gap:8px;
+  }
+  .strip-item .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);}
+
+  /* ---------- SERVICES ---------- */
+  .services{padding:88px 0 70px;}
+  .section-head{max-width:620px;margin-bottom:48px;}
+  .section-head h2{font-size:32px;margin-top:10px;}
+  .section-head p{color:var(--ink-soft);margin-top:14px;font-size:15.5px;}
+  .service-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .service-card{
+    background:var(--white);
+    padding:38px 32px;
+  }
+  .service-icon{
+    width:46px;height:46px;border-radius:50%;
+    background:var(--green-900);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:22px;
+  }
+  .service-card h3{font-size:19px;margin-bottom:12px;}
+  .service-card p{color:var(--ink-soft);font-size:14.5px;margin-bottom:16px;}
+  .service-card .more{
+    font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--green-700);font-weight:600;
+  }
+
+  /* ---------- CATEGORIES ---------- */
+  .categories{background:var(--sage);padding:80px 0;}
+  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:8px;}
+  .cat-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    padding:26px 22px 24px;
+  }
+  .cat-card .tag{
+    font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--gold);font-weight:700;margin-bottom:10px;display:block;
+  }
+  .cat-card h3{font-size:18px;margin-bottom:8px;}
+  .cat-card p{font-size:13.5px;color:var(--ink-soft);}
+  .cat-card .specs{
+    margin-top:14px;padding-top:14px;border-top:1px solid var(--line);
+    font-size:12.5px;color:var(--green-700);font-weight:600;
+  }
+
+  /* ---------- ADVANTAGE + AIRPORTS ---------- */
+  .advantage{padding:90px 0;}
+  .adv-grid{display:grid;grid-template-columns:1fr 1fr 1.05fr;gap:0;align-items:stretch;}
+  .adv-col{padding:0 24px;}
+  .adv-col:first-child{padding-left:0;}
+  .adv-col h2{font-size:26px;margin-bottom:18px;}
+  .adv-list li{
+    display:flex;gap:10px;padding:10px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14.5px;color:var(--ink);
+  }
+  .adv-list li:first-child{padding-top:0;}
+  .check{color:var(--gold);flex-shrink:0;}
+
+  .airports h3{font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-900);margin-bottom:14px;}
+  .airport-row{
+    display:flex;align-items:baseline;gap:12px;
+    padding:9px 0;border-bottom:1px solid var(--line);
+    font-size:13.5px;
+  }
+  .airport-row .code{
+    font-family:'Fraunces',serif;font-weight:600;color:var(--green-800);
+    width:42px;flex-shrink:0;font-size:15px;
+  }
+  .airport-row .num{
+    width:18px;height:18px;border-radius:50%;background:var(--green-900);
+    color:#fff;font-size:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .airport-row .place{color:var(--ink-soft);font-size:12.5px;}
+  .airport-row .home{
+    margin-left:auto;font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--gold);font-weight:700;white-space:nowrap;
+  }
+
+  .positioned{
+    background:var(--green-900);color:#fff;
+    padding:26px 24px;margin-top:18px;
+  }
+  .positioned h4{color:#fff;font-size:16px;margin-bottom:10px;font-weight:500;font-family:'Fraunces',serif;}
+  .positioned p{font-size:13px;color:rgba(255,255,255,0.78);margin-bottom:16px;}
+  .positioned ul li{
+    font-size:12.5px;color:rgba(255,255,255,0.85);
+    padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.12);
+    display:flex;align-items:center;gap:8px;
+  }
+  .positioned ul li .dot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+
+  /* ---------- BAND ---------- */
+  .band{background:var(--green-900);color:#fff;padding:64px 0;text-align:center;}
+  .band h2{color:#fff;font-size:28px;margin-bottom:14px;}
+  .band p{max-width:680px;margin:0 auto;color:rgba(255,255,255,0.72);font-size:15px;}
+  .band-grid{
+    margin-top:46px;display:grid;grid-template-columns:repeat(5,1fr);
+    gap:0;border-top:1px solid rgba(255,255,255,0.14);
+  }
+  .band-item{padding:26px 14px 4px;border-right:1px solid rgba(255,255,255,0.14);}
+  .band-item:last-child{border-right:none;}
+  .band-item h4{color:var(--gold-light);font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px;font-weight:700;font-family:'Inter',sans-serif;}
+  .band-item p{font-size:12.5px;color:rgba(255,255,255,0.65);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--green-900);color:rgba(255,255,255,0.7);padding:60px 0 0;border-top:1px solid rgba(255,255,255,0.08);}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:32px;padding-bottom:40px;}
+  .foot-brand img{height:34px;margin-bottom:14px;border-radius:3px;}
+  .foot-brand p{font-size:13px;color:rgba(255,255,255,0.6);max-width:280px;}
+  footer h5{color:#fff;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px;}
+  footer ul li{margin-bottom:9px;font-size:13px;}
+  footer ul li a:hover{color:var(--gold-light);}
+  .foot-contact li{color:rgba(255,255,255,0.7);}
+  .foot-bottom{
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding:18px 0 28px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+    font-size:11.5px;color:rgba(255,255,255,0.45);
+  }
+  .disclosure{
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding:18px 0;font-size:11px;color:rgba(255,255,255,0.45);line-height:1.6;
+  }
+
+  /* ---------- HONDA SPOTLIGHT ---------- */
+  .honda-spotlight{
+    background:var(--green-800);
+    border-top:1px solid rgba(255,255,255,0.08);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    padding:54px 0;
+  }
+  .honda-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;}
+  .honda-h2{color:#fff;font-size:28px;margin-top:10px;}
+  .honda-lede{color:rgba(255,255,255,0.75);font-size:14.5px;margin-top:14px;max-width:520px;}
+  .honda-specs{
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.12);
+  }
+  .honda-spec{background:var(--green-900);padding:18px 20px;}
+  .honda-spec-label{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px;}
+  .honda-spec-value{color:#fff;font-family:'Fraunces',serif;font-size:16px;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 1140px){
+    .nav-links{display:none;}
+    .menu-toggle{display:block;}
+  }
+  @media (max-width: 980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-art{height:260px;order:-1;}
+    .service-grid{grid-template-columns:1fr;}
+    .cat-grid{grid-template-columns:repeat(2,1fr);}
+    .adv-grid{grid-template-columns:1fr;gap:40px;}
+    .adv-col{padding:0;}
+    .band-grid{grid-template-columns:repeat(2,1fr);}
+    .band-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.14);}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    .honda-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width: 720px){
+    .hero h1{font-size:32px;}
+    .wrap, .nav{padding-left:20px;padding-right:20px;}
+    .cat-grid{grid-template-columns:1fr;}
+    .band-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">
+      <img src="assets/logo.png" alt="Palm Beach Jet Services logo" />
+      <span class="brand-text">
+        <strong>Palm Beach Jet Services</strong>
+        <span>Private Aviation</span>
+      </span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#charter">Charter</a>
+      <a href="#management">Aircraft Management</a>
+      <a href="#sales">Aircraft Sales</a>
+      <a href="#owners">Owner Services</a>
+      <a href="#hondajet">HondaJet Elite II</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:+18554725387" class="nav-phone">1 (855) 4-PBJETS</a>
+      <a href="#contact" class="btn btn-gold">Request a Quote</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow">Palm Beach County, Florida</p>
+      <h1>Private Aviation.<br>Personal Attention.<br><em>Palm Beach Expertise.</em></h1>
+      <p class="lede">A boutique brokerage arranging on-demand charter, aircraft sales, ownership advisory, and management coordination for discerning travelers, owners, and family offices across Palm Beach, the Treasure Coast, and South Florida.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-gold">Request Charter Quote</a>
+        <a href="#contact" class="btn btn-solid" style="background:transparent;border-color:rgba(255,255,255,0.4);color:#fff;">Speak With an Advisor</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="glow" cx="70%" cy="30%" r="60%">
+            <stop offset="0%" stop-color="#BD9A4E" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#BD9A4E" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="340" cy="120" r="170" fill="url(#glow)"/>
+        <!-- sunburst rays echoing the wordmark -->
+        <g stroke="#D8BD7F" stroke-width="1" opacity="0.5">
+          <line x1="340" y1="40" x2="340" y2="10"/>
+          <line x1="400" y1="60" x2="422" y2="40"/>
+          <line x1="430" y1="120" x2="460" y2="120"/>
+          <line x1="400" y1="180" x2="422" y2="200"/>
+          <line x1="280" y1="180" x2="258" y2="200"/>
+          <line x1="250" y1="120" x2="220" y2="120"/>
+          <line x1="280" y1="60" x2="258" y2="40"/>
+        </g>
+        <circle cx="340" cy="120" r="46" fill="none" stroke="#D8BD7F" stroke-width="1.4" opacity="0.85"/>
+        <!-- coastline -->
+        <path d="M0 340 Q 90 300 160 330 T 320 320 T 480 345 V420 H0 Z" fill="#0A3326" opacity="0.9"/>
+        <path d="M0 360 Q 100 330 200 352 T 480 365 V420 H0 Z" fill="#12462F" opacity="0.85"/>
+        <!-- jet silhouette, line art -->
+        <g transform="translate(60,250) rotate(-8)" fill="none" stroke="#F7F4EC" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M0 18 H230 C246 18 258 12 270 6 C276 3 282 4 280 9 C276 18 258 26 240 28 H40 L0 18 Z"/>
+          <path d="M70 18 L30 -28 L46 -28 L100 16"/>
+          <path d="M70 26 L30 64 L46 64 L100 28"/>
+          <path d="M220 14 L255 -10 L262 -8 L236 18"/>
+          <path d="M220 22 L255 44 L262 42 L236 22"/>
+          <circle cx="14" cy="18" r="3" fill="#F7F4EC" stroke="none"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="wrap">
+      <span class="strip-item"><span class="dot"></span> Home base: F45 &mdash; North County, Palm Beach Gardens</span>
+      <span class="strip-item"><span class="dot"></span> Serving Palm Beach &middot; Martin &middot; Broward &middot; Miami&#8211;Dade</span>
+      <span class="strip-item"><span class="dot"></span> charter@palmbeachjetservices.com</span>
+    </div>
+  </div>
+</section>
+
+<section class="honda-spotlight" id="hondajet">
+  <div class="wrap honda-grid">
+    <div>
+      <p class="eyebrow">Aircraft Spotlight</p>
+      <h2 class="honda-h2">Now Flying the HondaJet Elite II</h2>
+      <p class="honda-lede">As part of a growing relationship with Honda Aircraft Company, Palm Beach Jet Services is bringing the HondaJet Elite II &mdash; the fastest, highest-flying, and farthest-reaching aircraft in the very light jet class &mdash; into our regional charter and ownership advisory offering.</p>
+      <a href="#contact" class="btn btn-gold" style="margin-top:26px;">Inquire About the Elite II</a>
+    </div>
+    <div class="honda-specs">
+      <div class="honda-spec">
+        <div class="honda-spec-label">Category</div>
+        <div class="honda-spec-value">Very Light Jet</div>
+      </div>
+      <div class="honda-spec">
+        <div class="honda-spec-label">Seating</div>
+        <div class="honda-spec-value">Up to 6 (7 w/ belted lav)</div>
+      </div>
+      <div class="honda-spec">
+        <div class="honda-spec-label">NBAA IFR Range</div>
+        <div class="honda-spec-value">1,547 NM</div>
+      </div>
+      <div class="honda-spec">
+        <div class="honda-spec-label">Max Cruise</div>
+        <div class="honda-spec-value">422 KTAS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="charter">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What We Do</p>
+      <h2>Three ways we work with you</h2>
+      <p>Whether you need a single trip arranged or a long-term ownership strategy, Palm Beach Jet Services brings a single point of contact to every part of private aviation.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D8BD7F" stroke-width="1.8"><path d="M2 12l9-9 9 9-9 9-9-9z" opacity="0"/><path d="M2 16l8-12 4 5 6-7 2 14H2z"/></svg>
+        </div>
+        <h3>Charter Solutions</h3>
+        <p>On-demand charter, empty-leg opportunities, and tailored trip planning for business and leisure travel &mdash; arranged through our network of FAR Part 135 air carriers.</p>
+        <a href="#contact" class="more">Request a quote &rarr;</a>
+      </div>
+      <div class="service-card" id="sales">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D8BD7F" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>Aircraft Ownership &amp; Sales Advisory</h3>
+        <p>Guidance for buying, selling, and structuring aircraft ownership &mdash; acquisition due diligence, market positioning, and coordination with financing and counsel.</p>
+        <a href="#contact" class="more">Learn more &rarr;</a>
+      </div>
+      <div class="service-card" id="management">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D8BD7F" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 01-4 0v-.1a1.7 1.7 0 00-1-1.6 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.5-1H3a2 2 0 010-4h.1a1.7 1.7 0 001.5-1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.5V3a2 2 0 014 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.9V9a1.7 1.7 0 001.5 1H21a2 2 0 010 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>
+        </div>
+        <h3>Aircraft Management Coordination</h3>
+        <p>Owner-side oversight of crew scheduling, maintenance tracking, and compliance &mdash; coordinated with FAA-certificated management and operating partners.</p>
+        <a href="#contact" class="more">Learn more &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="categories">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Categories We Charter</p>
+      <h2>The right aircraft for the mission</h2>
+      <p>General passenger and range figures by category &mdash; the right aircraft depends on your route, group size, and runway requirements, and we'll match it accordingly.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <span class="tag">Turboprop</span>
+        <h3>Turboprop</h3>
+        <p>Efficient on short hops and shorter runways, including grass and unimproved strips.</p>
+        <div class="specs">6&ndash;9 pax &middot; ~1,000&ndash;1,800 NM</div>
+      </div>
+      <div class="cat-card">
+        <span class="tag">Light Jet</span>
+        <h3>Light Jet</h3>
+        <p>A strong fit for Florida day trips, the Bahamas, and the Northeast corridor.</p>
+        <div class="specs">4&ndash;8 pax &middot; ~1,500&ndash;2,200 NM</div>
+      </div>
+      <div class="cat-card">
+        <span class="tag">Midsize Jet</span>
+        <h3>Midsize Jet</h3>
+        <p>Stand-up cabins and transcontinental range for longer business trips.</p>
+        <div class="specs">7&ndash;9 pax &middot; ~2,800&ndash;3,400 NM</div>
+      </div>
+      <div class="cat-card">
+        <span class="tag">Heavy / Super-Mid</span>
+        <h3>Super-Midsize &amp; Heavy Jet</h3>
+        <p>Group travel, international range, and full cabin amenities.</p>
+        <div class="specs">8&ndash;16 pax &middot; 3,800+ NM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="advantage" id="owners">
+  <div class="wrap">
+    <div class="adv-grid">
+      <div class="adv-col">
+        <p class="eyebrow">Why Fly With Us</p>
+        <h2>The Palm Beach advantage</h2>
+        <ul class="adv-list">
+          <li><span class="check">&#10003;</span> Skip the crowds and lines at Palm Beach International</li>
+          <li><span class="check">&#10003;</span> Minutes from Palm Beach Island, Jupiter, and the Treasure Coast</li>
+          <li><span class="check">&#10003;</span> Quick, convenient access to the Bahamas</li>
+          <li><span class="check">&#10003;</span> Fly in, close to the door &mdash; no commercial terminal</li>
+          <li><span class="check">&#10003;</span> You're already where you need to be</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline-dark" style="margin-top:26px;">View Airport Access Guide</a>
+      </div>
+      <div class="adv-col">
+        <p class="eyebrow">About</p>
+        <h2 id="about">Who we are</h2>
+        <p style="color:var(--ink-soft);font-size:14.5px;margin-top:6px;">Palm Beach Jet Services is a boutique brokerage built on hands-on aviation operations experience and close industry relationships, with a commitment to discretion in every detail of your trip or transaction.</p>
+        <p style="color:var(--ink-soft);font-size:14.5px;margin-top:14px;">We act as your advocate &mdash; sourcing the right aircraft, vetting the operator, and managing logistics from first call to wheels-up.</p>
+      </div>
+      <div class="adv-col airports">
+        <p class="eyebrow">Regional Access</p>
+        <h3 style="margin-top:8px;">Seven airports, one coastline</h3>
+        <div class="airport-row"><span class="num">1</span><span class="code">SUA</span><span>Witham Field <span class="place">&middot; Stuart, FL</span></span></div>
+        <div class="airport-row"><span class="num">2</span><span class="code">F45</span><span>North Palm Beach County Gen. Aviation <span class="place">&middot; Palm Beach Gardens, FL</span></span><span class="home">Home Base</span></div>
+        <div class="airport-row"><span class="num">3</span><span class="code">PBI</span><span>Palm Beach International <span class="place">&middot; West Palm Beach, FL</span></span></div>
+        <div class="airport-row"><span class="num">4</span><span class="code">BCT</span><span>Boca Raton Airport <span class="place">&middot; Boca Raton, FL</span></span></div>
+        <div class="airport-row"><span class="num">5</span><span class="code">FLL</span><span>Fort Lauderdale&ndash;Hollywood Intl. <span class="place">&middot; Fort Lauderdale, FL</span></span></div>
+        <div class="airport-row"><span class="num">6</span><span class="code">FXE</span><span>Fort Lauderdale Executive <span class="place">&middot; Fort Lauderdale, FL</span></span></div>
+        <div class="airport-row"><span class="num">7</span><span class="code">OPF</span><span>Miami&ndash;Opa Locka Executive <span class="place">&middot; Opa-locka, FL</span></span></div>
+
+        <div class="positioned">
+          <h4>Perfectly Positioned</h4>
+          <p>North County (F45) gives us elite, uncongested access with a 4,300-ft runway &mdash; ideal for turboprops and light jets, just minutes from Palm Beach Island.</p>
+          <ul>
+            <li><span class="dot"></span> 4,300 ft runway, Rwy 13/31</li>
+            <li><span class="dot"></span> Minutes from Palm Beach Island</li>
+            <li><span class="dot"></span> Easy access to Jupiter &amp; the Treasure Coast</li>
+            <li><span class="dot"></span> Less congestion than PBI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--gold-light);">Our Commitment</p>
+    <h2>Experience. Integrity. Results.</h2>
+    <p>Palm Beach Jet Services is built on hands-on aviation experience, deep industry relationships, and a commitment to delivering exceptional service with complete discretion.</p>
+    <div class="band-grid">
+      <div class="band-item"><h4>Discretion</h4><p>Your privacy is our highest priority.</p></div>
+      <div class="band-item"><h4>Reliability</h4><p>Responsive support and dependable planning.</p></div>
+      <div class="band-item"><h4>Safety</h4><p>We work only with vetted, certificated operators.</p></div>
+      <div class="band-item"><h4>Relationships</h4><p>Long-term partnerships built on trust.</p></div>
+      <div class="band-item"><h4>Results</h4><p>Solutions tailored to your goals.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/logo.png" alt="Palm Beach Jet Services logo" />
+        <p>Boutique private aviation brokerage, sales, advisory, and management coordination for Palm Beach, the Treasure Coast, and South Florida.</p>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#charter">Charter</a></li>
+          <li><a href="#management">Aircraft Management</a></li>
+          <li><a href="#sales">Aircraft Sales</a></li>
+          <li><a href="#owners">Owner Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact Us</h5>
+        <ul class="foot-contact">
+          <li>&#9742; <a href="tel:+18554725387">1 (855) 4-PBJETS</a> <span style="opacity:.6;">&middot; (855) 472-5387</span></li>
+          <li>&#9993; <a href="mailto:charter@palmbeachjetservices.com">charter@palmbeachjetservices.com</a></li>
+          <li>&#9679; Palm Beach Gardens, Florida</li>
+        </ul>
+      </div>
+    </div>
+    <div class="disclosure">
+      Palm Beach Jet Services is an air charter broker / advisor. We do not operate aircraft. All charter flights are operated by FAA-certificated air carriers under 14 CFR Part 135, which exercise full operational control of each flight.
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Palm Beach Jet Services. All rights reserved.</span>
+      <span>Palm Beach &middot; Martin &middot; Broward &middot; Miami&#8211;Dade Counties, Florida</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const isOpen = links.style.display === 'flex';
+    links.style.display = isOpen ? 'none' : 'flex';
+    links.style.flexDirection = 'column';
+    links.style.position = 'absolute';
+    links.style.top = '64px';
+    links.style.left = '0';
+    links.style.right = '0';
+    links.style.background = 'var(--green-900)';
+    links.style.padding = '18px 24px';
+    links.style.gap = '16px';
+  });
+</script>
+
+</body>
+</html>
