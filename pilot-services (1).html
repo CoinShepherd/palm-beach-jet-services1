@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pilot Services | Palm Beach Jet Services</title>
+  <meta name="description" content="South Florida's boutique aviation talent network. Contract and full-time pilots connect with operators, charter companies, and flight departments across the Palm Beach corridor." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #1B3A2D;
+      --green-mid:   #243F31;
+      --green-deep:  #0F2218;
+      --green-light: #2C5040;
+      --gold:        #C9A84C;
+      --gold-light:  #E4CC8A;
+      --gold-pale:   #F5EDD5;
+      --cream:       #F5F0E8;
+      --cream-mid:   #EDE7DA;
+      --text-dark:   #0F2218;
+      --text-mid:    #3D5248;
+      --text-muted:  #6B7F74;
+      --white:       #FFFFFF;
+      --border:      rgba(27,58,45,0.12);
+      --border-gold: rgba(201,168,76,0.35);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--green-deep);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--cream);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(245,240,232,0.65);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cream); }
+    .nav-links a.active { color: var(--gold); }
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--green-deep) !important;
+      background: var(--gold);
+      padding: 7px 18px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--green-deep) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--green);
+      padding: 80px 2rem 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.4;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .hero-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(32px, 4vw, 46px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-body {
+      font-size: 15px;
+      color: rgba(245,240,232,0.68);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 440px;
+    }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-gold {
+      display: inline-block;
+      padding: 13px 28px;
+      background: var(--gold);
+      color: var(--green-deep);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border-radius: 4px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-ghost {
+      display: inline-block;
+      padding: 13px 28px;
+      background: transparent;
+      color: rgba(245,240,232,0.75);
+      font-size: 13px;
+      font-weight: 400;
+      border: 1px solid rgba(245,240,232,0.25);
+      border-radius: 4px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: rgba(245,240,232,0.55); color: var(--cream); }
+
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .hero-stat-card {
+      background: rgba(245,240,232,0.06);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 8px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .hero-stat-icon {
+      width: 44px; height: 44px;
+      border-radius: 6px;
+      background: rgba(201,168,76,0.12);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-stat-icon svg { width: 22px; height: 22px; }
+    .hero-stat-num {
+      font-family: 'Fraunces', serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1;
+    }
+    .hero-stat-lbl {
+      font-size: 12px;
+      color: rgba(245,240,232,0.5);
+      margin-top: 3px;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── AUDIENCE TOGGLE ── */
+    .toggle-section {
+      background: var(--cream-mid);
+      border-bottom: 1px solid var(--border);
+      padding: 0;
+      position: sticky;
+      top: 64px;
+      z-index: 90;
+    }
+    .toggle-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .toggle-btn {
+      padding: 16px 28px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .toggle-btn.active {
+      color: var(--green);
+      border-bottom-color: var(--gold);
+    }
+    .toggle-btn:hover:not(.active) { color: var(--text-dark); }
+    .toggle-divider {
+      width: 1px; height: 20px;
+      background: var(--border);
+      margin: 0 4px;
+    }
+
+    /* ── MAIN CONTENT WRAPPER ── */
+    .content-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── PILOT VIEW ── */
+    #view-pilot { display: block; }
+    #view-recruiter { display: none; }
+
+    /* ── SECTION HEADERS ── */
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 300;
+      color: var(--green);
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+    .section-body {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    /* ── SEARCH / FILTER BAR ── */
+    .search-section {
+      padding: 40px 0 0;
+    }
+    .search-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .search-input {
+      flex: 1;
+      padding: 11px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      background: var(--white);
+      color: var(--text-dark);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-input::placeholder { color: var(--text-muted); }
+    .search-input:focus { border-color: var(--gold); }
+    .search-btn {
+      padding: 11px 24px;
+      background: var(--green);
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .search-btn:hover { background: var(--green-light); }
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+    .filter-chip {
+      padding: 6px 14px;
+      font-size: 12px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--white);
+      color: var(--text-mid);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-chip:hover { border-color: var(--gold); color: var(--text-dark); }
+    .filter-chip.active {
+      background: var(--gold-pale);
+      border-color: var(--gold);
+      color: var(--green-deep);
+      font-weight: 500;
+    }
+
+    /* ── PILOT CARDS ── */
+    .pilot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+    .pilot-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+    .pilot-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-2px);
+    }
+    .video-thumb {
+      width: 100%;
+      height: 148px;
+      background: var(--green);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-thumb-b { background: #1F3C2E; }
+    .video-thumb-c { background: #162E21; }
+    .video-thumb-d { background: #263D30; }
+    .video-thumb-e { background: #1A3528; }
+    .video-thumb-f { background: #122819; }
+    .play-ring {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.92);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .pilot-card:hover .play-ring { background: var(--gold); transform: scale(1.08); }
+    .play-ring svg { width: 18px; height: 18px; fill: var(--green-deep); margin-left: 2px; }
+    .video-label {
+      position: absolute;
+      top: 10px; right: 10px;
+      background: rgba(201,168,76,0.88);
+      color: var(--green-deep);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 20px;
+    }
+    .avail-dot {
+      position: absolute;
+      top: 12px; left: 12px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .dot-green {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #4CAF72;
+      border: 1.5px solid var(--green);
+    }
+    .dot-amber {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #E8A12C;
+      border: 1.5px solid var(--green);
+    }
+    .avail-label {
+      font-size: 10px;
+      color: rgba(245,240,232,0.75);
+      font-weight: 400;
+    }
+    .card-body { padding: 16px 18px 14px; }
+    .card-name {
+      font-family: 'Fraunces', serif;
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--green-deep);
+      margin-bottom: 3px;
+    }
+    .card-cert {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      letter-spacing: 0.01em;
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 14px;
+    }
+    .tag {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      background: var(--cream-mid);
+      color: var(--text-mid);
+      border: 1px solid var(--border);
+    }
+    .tag-gold {
+      background: var(--gold-pale);
+      color: #7A5C10;
+      border-color: var(--border-gold);
+      font-weight: 500;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .card-hrs {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .card-hrs strong {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .card-link {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--green);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.15s;
+    }
+    .card-link:hover { color: var(--gold); }
+
+    /* ── VERIFIED BADGE ── */
+    .verified-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+      font-weight: 500;
+      color: #2E6B46;
+      background: #E0F2E9;
+      border: 1px solid #B2DEC5;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+    .verified-badge svg { width: 10px; height: 10px; }
+
+    /* ── HOW IT WORKS ── */
+    .how-section {
+      background: var(--green);
+      padding: 72px 2rem;
+    }
+    .how-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .how-header { text-align: center; margin-bottom: 48px; }
+    .how-header .section-eyebrow { color: var(--gold); }
+    .how-header .section-title { color: var(--cream); }
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      position: relative;
+    }
+    .how-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201,168,76,0.4), transparent);
+    }
+    .how-step {
+      text-align: center;
+      padding: 0 16px;
+      position: relative;
+    }
+    .step-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.35);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      font-family: 'Fraunces', serif;
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--gold-light);
+    }
+    .step-title {
+      font-family: 'Fraunces', serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+    .step-body {
+      font-size: 13px;
+      color: rgba(245,240,232,0.55);
+      line-height: 1.6;
+    }
+
+    /* ── DUAL CTA ── */
+    .cta-section {
+      padding: 72px 2rem;
+      background: var(--cream-mid);
+      border-top: 1px solid var(--border);
+    }
+    .cta-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .cta-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 36px 36px 32px;
+    }
+    .cta-card-gold { border-color: var(--border-gold); }
+    .cta-icon {
+      width: 48px; height: 48px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .cta-icon-green { background: var(--green); }
+    .cta-icon-cream { background: var(--gold-pale); border: 1px solid var(--border-gold); }
+    .cta-icon svg { width: 24px; height: 24px; }
+    .cta-card-title {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--green-deep);
+      margin-bottom: 10px;
+    }
+    .cta-card-body {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .cta-price {
+      font-family: 'Fraunces', serif;
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+    .cta-price-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cta-list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+    .cta-list li {
+      font-size: 13px;
+      color: var(--text-mid);
+      padding: 6px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cta-list li:last-child { border-bottom: none; }
+    .check-icon { color: var(--gold); font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+    .btn-green {
+      display: inline-block;
+      padding: 13px 28px;
+      background: var(--green);
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+      margin-right: 10px;
+    }
+    .btn-green:hover { background: var(--green-light); }
+    .btn-outline-green {
+      display: inline-block;
+      padding: 13px 24px;
+      background: transparent;
+      color: var(--text-mid);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline-green:hover { border-color: var(--green); color: var(--green); }
+
+    /* ── RECRUITER VIEW ── */
+    .recruiter-hero {
+      padding: 56px 0 48px;
+    }
+    .recruiter-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 48px;
+    }
+    .recruiter-proof {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .proof-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 16px;
+      text-align: center;
+    }
+    .proof-num {
+      font-family: 'Fraunces', serif;
+      font-size: 30px;
+      font-weight: 300;
+      color: var(--green);
+      line-height: 1;
+    }
+    .proof-lbl {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .differentiators {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 40px 0;
+    }
+    .diff-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .diff-icon {
+      width: 36px; height: 36px;
+      border-radius: 6px;
+      background: var(--gold-pale);
+      border: 1px solid var(--border-gold);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .diff-icon svg { width: 18px; height: 18px; }
+    .diff-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin-bottom: 4px;
+    }
+    .diff-body { font-size: 13px; color: var(--text-mid); line-height: 1.55; }
+
+    /* ── AIRPORT STRIP ── */
+    .airport-strip {
+      background: var(--green-deep);
+      padding: 14px 2rem;
+      overflow: hidden;
+    }
+    .airport-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .airport-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.6);
+      white-space: nowrap;
+    }
+    .airports {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .airport {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(245,240,232,0.55);
+      letter-spacing: 0.06em;
+    }
+    .airport.home {
+      color: var(--gold);
+      position: relative;
+    }
+    .airport.home::after {
+      content: '★';
+      font-size: 8px;
+      position: absolute;
+      top: -3px;
+      right: -10px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-deep);
+      padding: 48px 2rem 32px;
+      border-top: 1px solid rgba(201,168,76,0.15);
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 40px;
+    }
+    .footer-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-tagline {
+      font-size: 13px;
+      color: rgba(245,240,232,0.45);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .footer-phone {
+      font-size: 14px;
+      color: var(--gold);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .footer-phone:hover { color: var(--gold-light); }
+    .footer-col-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.35);
+      margin-bottom: 14px;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(245,240,232,0.5);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--cream); }
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(245,240,232,0.08);
+      margin-bottom: 20px;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(245,240,232,0.3);
+      line-height: 1.6;
+    }
+    .footer-disclosure {
+      font-size: 10.5px;
+      color: rgba(245,240,232,0.28);
+      line-height: 1.7;
+      max-width: 500px;
+      text-align: right;
+    }
+
+    /* ── DIVIDER ── */
+    .gold-rule {
+      border: none;
+      border-top: 1px solid var(--border-gold);
+      opacity: 0.4;
+      margin: 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-stats { display: none; }
+      .how-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .how-steps::before { display: none; }
+      .cta-inner { grid-template-columns: 1fr; }
+      .recruiter-header { grid-template-columns: 1fr; }
+      .differentiators { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; }
+      .footer-disclosure { text-align: left; }
+      .toggle-btn { padding: 14px 16px; font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Palm Beach <span>Jet Services</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#charter">Charter</a></li>
+        <li><a href="index.html#fleet">Fleet</a></li>
+        <li><a href="pilot-services.html" class="active">Pilot Services</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="tel:18554725387" class="nav-cta">1-855-4-PBJETS</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- AIRPORT STRIP -->
+  <div class="airport-strip">
+    <div class="airport-inner">
+      <span class="airport-label">Service area</span>
+      <div class="airports">
+        <span class="airport">SUA</span>
+        <span class="airport home">F45</span>
+        <span class="airport">PBI</span>
+        <span class="airport">BCT</span>
+        <span class="airport">FLL</span>
+        <span class="airport">FXE</span>
+        <span class="airport">OPF</span>
+      </div>
+      <span class="footer-phone" style="font-size:12px;">★ Home base</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-inner">
+      <div>
+        <p class="hero-eyebrow">Pilot Services</p>
+        <h1 class="hero-title" id="hero-heading">
+          South Florida's<br /><em>aviation talent network</em>
+        </h1>
+        <p class="hero-body">
+          Contract and career pilots in the Palm Beach corridor — connect directly with operators,
+          charter companies, and corporate flight departments through curated, FAA-verified video profiles.
+        </p>
+        <div class="hero-btns">
+          <button class="btn-gold" onclick="switchView('pilot'); document.getElementById('pilot-top').scrollIntoView({behavior:'smooth'})">
+            List your profile
+          </button>
+          <button class="btn-ghost" onclick="switchView('recruiter'); document.getElementById('recruiter-top').scrollIntoView({behavior:'smooth'})">
+            Browse pilots →
+          </button>
+        </div>
+      </div>
+      <div class="hero-stats" aria-hidden="true">
+        <div class="hero-stat-card">
+          <div class="hero-stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div>
+            <div class="hero-stat-num">38</div>
+            <div class="hero-stat-lbl">Verified pilot profiles</div>
+          </div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div>
+            <div class="hero-stat-num">90 sec</div>
+            <div class="hero-stat-lbl">Video intro per pilot</div>
+          </div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
+          </div>
+          <div>
+            <div class="hero-stat-num">FAA cert</div>
+            <div class="hero-stat-lbl">Verified before listing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIENCE TOGGLE -->
+  <div class="toggle-section" role="tablist" aria-label="View selector">
+    <div class="toggle-inner">
+      <button class="toggle-btn active" id="tab-pilot" role="tab" aria-selected="true" aria-controls="view-pilot" onclick="switchView('pilot')">
+        I'm a pilot seeking work
+      </button>
+      <div class="toggle-divider" aria-hidden="true"></div>
+      <button class="toggle-btn" id="tab-recruiter" role="tab" aria-selected="false" aria-controls="view-recruiter" onclick="switchView('recruiter')">
+        I'm recruiting / hiring
+      </button>
+    </div>
+  </div>
+
+  <!-- ══ PILOT VIEW ══ -->
+  <div id="view-pilot" role="tabpanel" aria-labelledby="tab-pilot">
+
+    <div class="content-wrap" id="pilot-top">
+      <div class="search-section">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:28px;">
+          <div>
+            <p class="section-eyebrow">Active roster</p>
+            <h2 class="section-title">Browse available pilots</h2>
+            <p class="section-body">Every profile is FAA-verified and includes a 90-second unscripted video introduction.</p>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; padding-top:6px;">
+            <span class="verified-badge">
+              <svg viewBox="0 0 12 12" fill="none" stroke="#2E6B46" stroke-width="1.5"><path d="M2 6l3 3 5-5"/></svg>
+              FAA verified
+            </span>
+          </div>
+        </div>
+        <div class="search-row">
+          <input type="text" class="search-input" placeholder="Search by type rating, base airport, or name…" aria-label="Search pilots" />
+          <button class="search-btn">Search</button>
+        </div>
+        <div class="filter-row" role="group" aria-label="Filter by aircraft type">
+          <button class="filter-chip active">All ratings</button>
+          <button class="filter-chip">Gulfstream</button>
+          <button class="filter-chip">Citation</button>
+          <button class="filter-chip">Challenger</button>
+          <button class="filter-chip">Global</button>
+          <button class="filter-chip">HondaJet</button>
+          <button class="filter-chip">Phenom</button>
+          <button class="filter-chip">Contract only</button>
+          <button class="filter-chip">Full-time only</button>
+        </div>
+      </div>
+
+      <!-- PILOT CARDS -->
+      <div class="pilot-grid">
+
+        <article class="pilot-card" tabindex="0" aria-label="Pilot profile: Captain James R.">
+          <div class="video-thumb">
+            <div class="avail-dot">
+              <div class="dot-green"></div>
+              <span class="avail-label">Available now</span>
+            </div>
+            <div class="play-ring" aria-label="Play video intro">
+              <svg viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="#0F2218"/></svg>
+            </div>
+            <div class="video-label">90 sec intro</div>
+          </div>
+          <div class="card-body">
+            <p class="card-name">Capt. James R.</p>
+            <p class="card-cert">ATP · GIV / GV Type Rated · PBI Base</p>
+            <div class="card-tags">
+              <span class="tag tag-gold">Gulfstream IV</span>
+              <span class="tag tag-gold">Gulfstream V</span>
+              <span class="tag">Part 135</span>
+              <span class="tag">Contract</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-hrs"><strong>8,400</strong> TT hrs</span>
+              <a href="#" class="card-link">View profile →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pilot-card" tabindex="0" aria-label="Pilot profile: First Officer Sandra M.">
+          <div class="video-thumb video-thumb-b">
+            <div class="avail-dot">
+              <div class="dot-green"></div>
+              <span class="avail-label">Available now</span>
+            </div>
+            <div class="play-ring">
+              <svg viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="#0F2218"/></svg>
+            </div>
+            <div class="video-label">90 sec intro</div>
+          </div>
+          <div class="card-body">
+            <p class="card-name">F/O Sandra M.</p>
+            <p class="card-cert">ATP · CE-525 / CE-560XL · F45 Base</p>
+            <div class="card-tags">
+              <span class="tag tag-gold">Citation XLS</span>
+              <span class="tag tag-gold">Citation CJ3+</span>
+              <span class="tag">Part 91</span>
+              <span class="tag">Full-time</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-hrs"><strong>3,200</strong> TT hrs</span>
+              <a href="#" class="card-link">View profile →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pilot-card" tabindex="0" aria-label="Pilot profile: Captain D. Okafor">
+          <div class="video-thumb video-thumb-c">
+            <div class="avail-dot">
+              <div class="dot-amber"></div>
+              <span class="avail-label">Available Aug</span>
+            </div>
+            <div class="play-ring">
+              <svg viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="#0F2218"/></svg>
+            </div>
+            <div class="video-label">90 sec intro</div>
+          </div>
+          <div class="card-body">
+            <p class="card-name">Capt. D. Okafor</p>
+            <p class="card-cert">ATP · CL-600 / HA-420 · FXE Base</p>
+            <div class="card-tags">
+              <span class="tag tag-gold">Challenger 300</span>
+              <span class="tag tag-gold">HondaJet Elite II</span>
+              <span class="tag">Contract</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-hrs"><strong>5,750</strong> TT hrs</span>
+              <a href="#" class="card-link">View profile →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pilot-card" tabindex="0" aria-label="Pilot profile: Captain Maria V.">
+          <div class="video-thumb video-thumb-d">
+            <div class="avail-dot">
+              <div class="dot-green"></div>
+              <span class="avail-label">Available now</span>
+            </div>
+            <div class="play-ring">
+              <svg viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="#0F2218"/></svg>
+            </div>
+            <div class="video-label">90 sec intro</div>
+          </div>
+          <div class="card-body">
+            <p class="card-name">Capt. Maria V.</p>
+            <p class="card-cert">ATP · BD-700 · PBI Base</p>
+            <div class="card-tags">
+              <span class="tag tag-gold">Global 6000</span>
+              <span class="tag">Part 91</span>
+              <span class="tag">Part 135</span>
+              <span class="tag">Contract</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-hrs"><strong>11,200</strong> TT hrs</span>
+              <a href="#" class="card-link">View profile →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pilot-card" tabindex="0" aria-label="Pilot profile: First Officer T. Brennan">
+          <div class="video-thumb video-thumb-e">
+            <div class="avail-dot">
+              <div class="dot-green"></div>
+              <span class="avail-label">Available now</span>
+            </div>
+            <div class="play-ring">
+              <svg viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="#0F2218"/></svg>
+            </div>
+            <div class="video-label">90 sec intro</div>
+          </div>
+          <div class="card-body">
+            <p class="card-name">F/O T. Brennan</p>
+            <p class="card-cert">ATP · EMB-500 / EMB-505 · FLL Base</p>
+            <div class="card-tags">
+              <span class="tag tag-gold">Phenom 100</span>
+              <span class="tag tag-gold">Phenom 300</span>
+              <span class="tag">Part 135</span>
+              <span class="tag">Full-time</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-hrs"><strong>2,900</strong> TT hrs</span>
+              <a href="#" class="card-link">View profile →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pilot-card" tabindex="0" aria-label="Pilot profile: Captain R. Hollister">
+          <div class="video-thumb video-thumb-f">
+            <div class="avail-dot">
+              <div class="dot-amber"></div>
+              <span class="avail-label">Available Sep</span>
+            </div>
+            <div class="play-ring">
+              <svg viewBox="0 0 18 18"><polygon points="5,3 15,9 5,15" fill="#0F2218"/></svg>
+            </div>
+            <div class="video-label">90 sec intro</div>
+          </div>
+          <div class="card-body">
+            <p class="card-name">Capt. R. Hollister</p>
+            <p class="card-cert">ATP · GVI / GVII · BCT Base</p>
+            <div class="card-tags">
+              <span class="tag tag-gold">G650</span>
+              <span class="tag tag-gold">G700</span>
+              <span class="tag">Part 91</span>
+              <span class="tag">Contract</span>
+            </div>
+            <div class="card-footer">
+              <span class="card-hrs"><strong>14,600</strong> TT hrs</span>
+              <a href="#" class="card-link">View profile →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div><!-- /content-wrap -->
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section" aria-labelledby="how-heading">
+      <div class="how-inner">
+        <div class="how-header">
+          <p class="section-eyebrow">For pilots</p>
+          <h2 class="section-title" id="how-heading">How to get listed</h2>
+        </div>
+        <div class="how-steps" role="list">
+          <div class="how-step" role="listitem">
+            <div class="step-num" aria-hidden="true">1</div>
+            <h3 class="step-title">Submit your profile</h3>
+            <p class="step-body">Type ratings, total hours, base airport, and availability. Takes about five minutes.</p>
+          </div>
+          <div class="how-step" role="listitem">
+            <div class="step-num" aria-hidden="true">2</div>
+            <h3 class="step-title">FAA verification</h3>
+            <p class="step-body">We confirm your airman certificate via the FAA Airmen Inquiry database before you go live.</p>
+          </div>
+          <div class="how-step" role="listitem">
+            <div class="step-num" aria-hidden="true">3</div>
+            <h3 class="step-title">Record your intro</h3>
+            <p class="step-body">Upload a 90-second video — phone camera is fine. No scripting or production required.</p>
+          </div>
+          <div class="how-step" role="listitem">
+            <div class="step-num" aria-hidden="true">4</div>
+            <h3 class="step-title">Get discovered</h3>
+            <p class="step-body">Operators and recruiters across the Palm Beach corridor browse and contact you directly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PILOT CTA -->
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="cta-inner">
+        <div class="cta-card cta-card-gold">
+          <div class="cta-icon cta-icon-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h6"/></svg>
+          </div>
+          <h2 class="cta-card-title" id="cta-heading">List your pilot profile</h2>
+          <p class="cta-card-body">
+            Be visible to South Florida operators, charter directors, and aviation headhunters
+            who are actively sourcing contract and full-time crew.
+          </p>
+          <div class="cta-price">$79</div>
+          <p class="cta-price-note">One-time listing fee &nbsp;·&nbsp; Active for 12 months</p>
+          <ul class="cta-list">
+            <li><span class="check-icon">✦</span>FAA certificate verification included</li>
+            <li><span class="check-icon">✦</span>Video intro uploaded or recorded via link</li>
+            <li><span class="check-icon">✦</span>Searchable by type rating and base airport</li>
+            <li><span class="check-icon">✦</span>Direct contact from recruiters — no middleman</li>
+            <li><span class="check-icon">✦</span>Availability status you control</li>
+          </ul>
+          <a href="mailto:pilots@palmbeachjetservices.com?subject=Pilot%20Profile%20Listing" class="btn-gold">Apply to list your profile</a>
+        </div>
+        <div class="cta-card">
+          <div class="cta-icon cta-icon-cream">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#7A5C10" stroke-width="1.5"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/></svg>
+          </div>
+          <h2 class="cta-card-title">Operator &amp; recruiter access</h2>
+          <p class="cta-card-body">
+            Browse the full verified pilot roster, watch video intros, and reach out directly.
+            No subscription — free for operators and headhunters.
+          </p>
+          <div class="cta-price" style="color:var(--gold);">Free</div>
+          <p class="cta-price-note">For verified operators, Part 135 certificate holders, and aviation recruiters</p>
+          <ul class="cta-list">
+            <li><span class="check-icon">✦</span>Full roster browsing with filters</li>
+            <li><span class="check-icon">✦</span>90-second video intros for every pilot</li>
+            <li><span class="check-icon">✦</span>Type rating and hours at a glance</li>
+            <li><span class="check-icon">✦</span>Availability status and base airport</li>
+            <li><span class="check-icon">✦</span>Direct pilot contact details on request</li>
+          </ul>
+          <a href="mailto:ops@palmbeachjetservices.com?subject=Recruiter%20Access%20Request" class="btn-green">Request recruiter access</a>
+          <a href="tel:18554725387" class="btn-outline-green">Call us</a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /view-pilot -->
+
+
+  <!-- ══ RECRUITER VIEW ══ -->
+  <div id="view-recruiter" role="tabpanel" aria-labelledby="tab-recruiter" hidden>
+
+    <div class="content-wrap" id="recruiter-top">
+      <div class="recruiter-hero">
+        <div class="recruiter-header">
+          <div>
+            <p class="section-eyebrow">For operators &amp; recruiters</p>
+            <h2 class="section-title">Find your next crew member in South Florida</h2>
+            <p class="section-body">
+              Every pilot on this roster is FAA-verified before listing and includes a 90-second unscripted
+              video intro. Filter by type rating, availability, and contract preference — then reach out directly.
+              No agency. No subscription.
+            </p>
+            <div style="margin-top:28px; display:flex; gap:12px; flex-wrap:wrap;">
+              <a href="mailto:ops@palmbeachjetservices.com?subject=Recruiter%20Access%20Request" class="btn-gold">Request free access</a>
+              <a href="tel:18554725387" class="btn-outline-green">1-855-4-PBJETS</a>
+            </div>
+          </div>
+          <div class="recruiter-proof">
+            <div class="proof-card">
+              <div class="proof-num">38</div>
+              <div class="proof-lbl">Verified pilots</div>
+            </div>
+            <div class="proof-card">
+              <div class="proof-num">9</div>
+              <div class="proof-lbl">Type ratings</div>
+            </div>
+            <div class="proof-card">
+              <div class="proof-num">7</div>
+              <div class="proof-lbl">Airports covered</div>
+            </div>
+            <div class="proof-card">
+              <div class="proof-num">90s</div>
+              <div class="proof-lbl">Video per pilot</div>
+            </div>
+            <div class="proof-card">
+              <div class="proof-num">$0</div>
+              <div class="proof-lbl">Recruiter cost</div>
+            </div>
+            <div class="proof-card">
+              <div class="proof-num">FAA</div>
+              <div class="proof-lbl">Cert verified</div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="gold-rule" />
+
+        <div class="differentiators" style="margin-top:40px;">
+          <div class="diff-item">
+            <div class="diff-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7A5C10" stroke-width="1.5"><path d="M15 10l-4 4-2-2"/><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+            <div>
+              <p class="diff-title">FAA Airmen Inquiry verification</p>
+              <p class="diff-body">Every certificate number confirmed before listing. Not a self-reported resume — a verified credential.</p>
+            </div>
+          </div>
+          <div class="diff-item">
+            <div class="diff-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7A5C10" stroke-width="1.5"><path d="M15 10l4-4-4-4M19 6H9a4 4 0 0 0 0 8h1"/><path d="M9 18l-4 4 4-4M5 18h10a4 4 0 0 0 0-8h-1"/></svg>
+            </div>
+            <div>
+              <p class="diff-title">90-second video intros</p>
+              <p class="diff-body">Assess communication, professionalism, and personality before you ever pick up the phone.</p>
+            </div>
+          </div>
+          <div class="diff-item">
+            <div class="diff-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7A5C10" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            <div>
+              <p class="diff-title">Palm Beach market focus</p>
+              <p class="diff-body">Pilots who know this ramp — F45, PBI, FXE, and the South Florida TFR environment.</p>
+            </div>
+          </div>
+          <div class="diff-item">
+            <div class="diff-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7A5C10" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <p class="diff-title">No placement fees</p>
+              <p class="diff-body">You pay nothing. Hire who you want, contact them directly. We facilitate discovery, not placement.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center; padding: 48px 0 16px;">
+          <p class="section-eyebrow" style="text-align:center;">Ready to browse?</p>
+          <h2 class="section-title" style="text-align:center; margin-bottom:16px;">Access the full roster</h2>
+          <p style="font-size:15px; color:var(--text-mid); margin-bottom:28px;">Send us a quick note with your company name and we'll grant access within one business day.</p>
+          <a href="mailto:ops@palmbeachjetservices.com?subject=Recruiter%20Access%20Request" class="btn-gold">Request access — it's free</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /view-recruiter -->
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <p class="footer-logo">Palm Beach <span>Jet Services</span></p>
+          <p class="footer-tagline">
+            Boutique private aviation brokerage serving the Palm Beach corridor.<br />
+            Charter, aircraft management, and pilot network services.
+          </p>
+          <a href="tel:18554725387" class="footer-phone">1-855-4-PBJETS</a>
+        </div>
+        <div>
+          <p class="footer-col-label">Services</p>
+          <ul class="footer-links">
+            <li><a href="index.html#charter">Charter flights</a></li>
+            <li><a href="index.html#fleet">Fleet &amp; aircraft</a></li>
+            <li><a href="pilot-services.html">Pilot services</a></li>
+            <li><a href="index.html#contact">Contact us</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-label">Airports</p>
+          <ul class="footer-links">
+            <li><a href="#">F45 — Palm Beach Gardens ★</a></li>
+            <li><a href="#">PBI — Palm Beach Intl</a></li>
+            <li><a href="#">BCT — Boca Raton</a></li>
+            <li><a href="#">FLL — Fort Lauderdale</a></li>
+            <li><a href="#">FXE — Fort Lauderdale Exec</a></li>
+            <li><a href="#">SUA — Stuart / Witham</a></li>
+            <li><a href="#">OPF — Opa-locka</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2025 Palm Beach Jet Services, LLC. All rights reserved.
+        </p>
+        <p class="footer-disclosure">
+          Palm Beach Jet Services operates as a registered aircraft charter broker. We do not own or operate aircraft.
+          All charter flights are operated by FAA-certificated air carriers holding valid Part 135 operating certificates.
+          Pilot Services listings are provided for informational and discovery purposes only. Palm Beach Jet Services does
+          not act as a staffing agency or placement service. Pilot engagements are between the pilot and the hiring operator.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchView(view) {
+      const pilotView = document.getElementById('view-pilot');
+      const recruiterView = document.getElementById('view-recruiter');
+      const tabPilot = document.getElementById('tab-pilot');
+      const tabRecruiter = document.getElementById('tab-recruiter');
+
+      if (view === 'pilot') {
+        pilotView.style.display = 'block';
+        pilotView.removeAttribute('hidden');
+        recruiterView.style.display = 'none';
+        recruiterView.setAttribute('hidden', '');
+        tabPilot.classList.add('active');
+        tabPilot.setAttribute('aria-selected', 'true');
+        tabRecruiter.classList.remove('active');
+        tabRecruiter.setAttribute('aria-selected', 'false');
+      } else {
+        recruiterView.style.display = 'block';
+        recruiterView.removeAttribute('hidden');
+        pilotView.style.display = 'none';
+        pilotView.setAttribute('hidden', '');
+        tabRecruiter.classList.add('active');
+        tabRecruiter.setAttribute('aria-selected', 'true');
+        tabPilot.classList.remove('active');
+        tabPilot.setAttribute('aria-selected', 'false');
+      }
+    }
+
+    document.querySelectorAll('.filter-chip').forEach(chip => {
+      chip.addEventListener('click', function() {
+        document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
